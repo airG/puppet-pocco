@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'rake'
 require 'rocco'
 
@@ -74,6 +75,7 @@ class Pocco
 
   def generate
     @sources.each do |source_file|
+      puts "Generating Pocco docs for #{source_file}..."
       dest_file = source_file.sub(Regexp.new("#{File.extname(source_file)}$"), ".html")
       dest_file.sub!(/manifests\//, 'docs/')
 
